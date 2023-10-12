@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 17:39:38 by sgodin            #+#    #+#             */
-/*   Updated: 2023/10/12 15:22:02 by sgodin           ###   ########.fr       */
+/*   Created: 2023/10/12 15:23:22 by sgodin            #+#    #+#             */
+/*   Updated: 2023/10/12 15:58:32 by sgodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Animal.hpp"
+# include "../include/Cat.hpp"
 
-Animal::Animal(void) : type("None") {
-	std::cout << GRAY "Animal : " R BOLD "Default" GRAY " create." << std::endl;
+Cat::Cat(void) : Animal() {
+	std::cout << GRAY "Cat : " R BOLD "Default" GRAY " create." << std::endl;
 }
 
-Animal::Animal(const Animal& src) : type(src.type)  {
-	std::cout << GRAY "Animal : " R BOLD << src.type << GRAY " create." << std::endl;
+Cat::Cat(const Cat& src) : Animal()  {
+	std::cout << GRAY "Cat : " R BOLD << src.type << GRAY " create." << std::endl;
+    type = src.type;
 }
 
-Animal::~Animal(void) {
-	std::cout << RED "Animal : " R BOLD << this->type << RED " destroye." << std::endl;
+Cat::~Cat(void) {
+	std::cout << RED "Cat : " R BOLD << this->type << RED " destroye." << std::endl;
 }
 
-Animal& Animal::operator=(const Animal& src) {
+Cat& Cat::operator=(const Cat& src) {
 	if (this != &src)
 		type = src.type;
 	return *this;
@@ -32,8 +33,4 @@ Animal& Animal::operator=(const Animal& src) {
 
 void Animal::makeSound(void) {
 	std::cout << GREEN "sound" R << std::endl; 
-}
-
-std::string Animal::getType(void) {
-	return type;
 }

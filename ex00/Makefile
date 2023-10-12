@@ -12,6 +12,8 @@
 
 SRCS = src/main.cpp\
 		src/Animal.cpp\
+		src/Cat.cpp\
+		src/Dog.cpp\
 
 INCL = include/Animal.hpp
 

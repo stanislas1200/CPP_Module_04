@@ -6,7 +6,7 @@
 /*   By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 17:29:48 by sgodin            #+#    #+#             */
-/*   Updated: 2023/10/11 17:42:11 by sgodin           ###   ########.fr       */
+/*   Updated: 2023/10/12 15:22:35 by sgodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ class Animal {
 		Animal(const Animal& src);
 		~Animal(void);
 		Animal& operator=(const Animal& src);
-		void makeSound();
+		void makeSound(void);
+		std::string getType(void);
 	protected:
 		std::string type;
 };

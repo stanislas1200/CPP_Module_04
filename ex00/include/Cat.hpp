@@ -6,7 +6,7 @@
 /*   By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 17:35:32 by sgodin            #+#    #+#             */
-/*   Updated: 2023/10/11 17:38:23 by sgodin           ###   ########.fr       */
+/*   Updated: 2023/10/12 15:58:13 by sgodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Cat : public Animal {
 		Cat(const Cat& src);
 		~Cat(void);
 		Cat& operator=(const Cat& src);
+		void makeSound(void);
 };
 
 #endif
