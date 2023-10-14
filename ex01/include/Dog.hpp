@@ -14,6 +14,7 @@
 # define DOG_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Dog : public Animal {
     public:
@@ -23,6 +24,8 @@ class Dog : public Animal {
 		Dog& operator=(const Dog& src);
 		
 		virtual void makeSound(void) const;
+	private:
+		Brain *brain;
 };
 
 #endif

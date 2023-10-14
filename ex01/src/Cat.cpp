@@ -14,19 +14,22 @@
 
 Cat::Cat(void) : Animal("cat") {
 	std::cout << GREEN "A " MAGENTA "Cat" GREEN " is born." R << std::endl;
+	brain = new Brain();
 }
 
 Cat::Cat(const Cat& src) : Animal("cat")  {
 	std::cout << GREEN "A " MAGENTA "Cat" GREEN " is born." R << std::endl;
     type = src.type;
+	brain = new Brain(*src.brain);
 }
 
 Cat::~Cat(void) {
 	std::cout << RED "A " MAGENTA "Cat" RED " is gone." R << std::endl;
+	delete brain;
 }
 
 Cat& Cat::operator=(const Cat& src) {
-	if (this != &src)
+	if (this != &src) // copy brain make a new one ?
 		type = src.type;
 	return *this;
 }

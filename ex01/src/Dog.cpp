@@ -15,15 +15,18 @@
 
 Dog::Dog(void) : Animal("Dog") {
 	std::cout << GREEN "A " CYAN "Dog" GREEN " is born." R << std::endl;
+	brain = new Brain();
 }
 
 Dog::Dog(const Dog& src) : Animal("Dog")  {
 	std::cout << GREEN "A " CYAN "Dog" GREEN " is born." R << std::endl;
     type = src.type;
+	brain = new Brain(*src.brain);
 }
 
 Dog::~Dog(void) {
 	std::cout << RED "A " CYAN "dog" RED " is gone." R << std::endl;
+	delete brain;
 }
 
 Dog& Dog::operator=(const Dog& src) {
