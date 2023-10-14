@@ -12,6 +12,7 @@ class Brain {
 		Brain& operator=(const Brain& src);
 
 		std::string getIdea(int i) const;
+		void setIdea(int i, std::string s);
 
 	private:
 		std::string	ideas[100];

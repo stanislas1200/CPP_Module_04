@@ -6,7 +6,7 @@
 /*   By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:26:55 by sgodin            #+#    #+#             */
-/*   Updated: 2023/10/12 15:27:02 by sgodin           ###   ########.fr       */
+/*   Updated: 2023/10/14 14:33:50 by sgodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,20 @@ Dog::~Dog(void) {
 
 Dog& Dog::operator=(const Dog& src) {
 	if (this != &src)
-		type = src.type;
+	{
+		delete brain;
+		brain = new Brain(*src.brain);
+	}
 	return *this;
 }
 
 void Dog::makeSound(void) const {
 	std::cout << CYAN "Dog : " R BOLD "Wouf wouf" R << std::endl;
+}
+
+void Dog::setIdea(int i, std::string s) {
+	brain->setIdea(i, s);
+}
+std::string Dog::getIdea(int i) const {
+	return brain->getIdea(i);
 }
