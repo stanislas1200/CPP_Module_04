@@ -10,9 +10,20 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = src/main.cpp
+SRCS = src/main.cpp\
+		src/AMateria.cpp\
+		src/MateriaSource.cpp\
+		src/Character.cpp\
+		src/Cure.cpp\
+		src/Ice.cpp\
 
-INCL = include/Animal.hpp
+INCL = include/AMateria.hpp\
+		include/ICharacter.hpp\
+		include/IMateriaSource.hpp\
+		include/MateriaSource.hpp\
+		include/Character.hpp\
+		include/Cure.hpp\
+		include/Ice.hpp\
 
 NAME =  a.out
 
