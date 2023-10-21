@@ -6,7 +6,7 @@
 /*   By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:38:09 by sgodin            #+#    #+#             */
-/*   Updated: 2023/10/17 17:38:11 by sgodin           ###   ########.fr       */
+/*   Updated: 2023/10/21 16:00:15 by sgodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ int main()
 	equal->use(0, *bob);
 	equal2->use(0, *bob);
 
-	// me->unequip(1);
-	// me->use(1, *bob); // no materia equipped
+	me->unequip(1);
+	me->use(1, *bob); // no materia equipped
 
 	delete bob;
 	delete me;

@@ -6,18 +6,18 @@
 /*   By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:37:58 by sgodin            #+#    #+#             */
-/*   Updated: 2023/10/17 17:38:00 by sgodin           ###   ########.fr       */
+/*   Updated: 2023/10/21 16:01:10 by sgodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Character.hpp"
 
-Character::Character() : _name("default") {
+Character::Character() : _name("default"), _memory(NULL) {
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = NULL;
 }
 
-Character::Character(Character const & src) : _name(src._name) {
+Character::Character(Character const & src) : _name(src._name), _memory(src._memory) {
 	for (int i = 0; i < 4; i++)
 		if (src._inventory[i])
 			_inventory[i] = src._inventory[i]->clone();
@@ -29,6 +29,16 @@ Character::~Character() {
 	for (int i = 0; i < 4; i++)
 		if (_inventory[i])
 			delete _inventory[i];
+			
+	s_memory* current = _memory;
+	
+	while (current != NULL) {
+		s_memory* nextMemory = current->next;
+		delete current->materia;
+		delete current;
+		current = nextMemory;
+	}
+	_memory = NULL;
 }
 
 Character & Character::operator=(Character const & src) {
@@ -48,7 +58,7 @@ Character & Character::operator=(Character const & src) {
 	return (*this);
 }
 
-Character::Character(std::string const & name) : _name(name) {
+Character::Character(std::string const & name) : _name(name), _memory(NULL) {
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = NULL;
 }
@@ -72,10 +82,22 @@ void Character::equip(AMateria* m) {
 	std::cout << GRAY "Inventory full" R << std::endl;
 }
 
-void Character::unequip(int idx) { // save before null to delete later
-	if (idx >= 0 && idx < 4)
+void push(s_memory** head, AMateria* node_data)
+{
+   s_memory* newNode = new s_memory;
+
+   newNode->materia = node_data;
+   newNode->next = (*head);
+   (*head) = newNode;
+}
+
+void Character::unequip(int idx) { 
+	s_memory *current = _memory;
+	if (idx >= 0 && idx < 4 && _inventory[idx])
+	{
+		push(&_memory, _inventory[idx]);
 		_inventory[idx] = NULL;
-	// else error message ?
+	}
 }
 
 void Character::use(int idx, ICharacter& target) {
