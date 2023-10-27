@@ -6,7 +6,7 @@
 /*   By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:39:20 by sgodin            #+#    #+#             */
-/*   Updated: 2023/10/17 17:39:22 by sgodin           ###   ########.fr       */
+/*   Updated: 2023/10/25 11:32:52 by sgodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ int main()
     // Animal a;
     // Animal b = Animal();
     // Animal c();
-    system("leaks a.out");
+    // system("leaks a.out");
     return 0;
 }

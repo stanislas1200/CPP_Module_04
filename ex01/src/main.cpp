@@ -33,6 +33,6 @@ int main()
     delete j;//should not create a leak
     delete i;
 
-    system("leaks a.out");
+    // system("leaks a.out");
     return 0;
 }

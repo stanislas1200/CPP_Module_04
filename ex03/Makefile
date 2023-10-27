@@ -6,7 +6,7 @@
 #    By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/13 14:39:47 by sgodin            #+#    #+#              #
-#    Updated: 2023/10/14 15:05:21 by sgodin           ###   ########.fr        #
+#    Updated: 2023/10/25 12:47:47 by sgodin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ INCL = include/AMateria.hpp\
 
 NAME =  a.out
 
-GCC = g++ -std=c++98 #-Wall -Wextra -Werror -fsanitize=address
+GCC = g++ -std=c++98 -Wall -Wextra -Werror -fsanitize=address
 
 OBJS_DIR = ./objects/
 OBJS = $(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))

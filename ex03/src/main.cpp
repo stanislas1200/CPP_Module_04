@@ -6,7 +6,7 @@
 /*   By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:38:09 by sgodin            #+#    #+#             */
-/*   Updated: 2023/10/21 16:00:15 by sgodin           ###   ########.fr       */
+/*   Updated: 2023/10/25 11:34:46 by sgodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ int main()
 	delete equal;
 	delete equal2;
 	delete src;
-
+	// system("leaks a.out");
 	return 0;
 }

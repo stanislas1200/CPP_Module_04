@@ -6,7 +6,7 @@
 /*   By: sgodin <sgodin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:37:58 by sgodin            #+#    #+#             */
-/*   Updated: 2023/10/21 16:01:10 by sgodin           ###   ########.fr       */
+/*   Updated: 2023/10/25 12:48:29 by sgodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ void push(s_memory** head, AMateria* node_data)
 }
 
 void Character::unequip(int idx) { 
-	s_memory *current = _memory;
 	if (idx >= 0 && idx < 4 && _inventory[idx])
 	{
 		push(&_memory, _inventory[idx]);
